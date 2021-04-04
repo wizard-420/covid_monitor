@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <title>CORONAVIRUS ACTIVE CASES</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all" 
+          href="../../css/gtvg.css" th:href="@{/css/gtvg.css}" />
+  </head>
+
+  <body>
+  
+    <p th:text="${testName}"></p>
+    <table>
+      <tr>
+        <th>State</th>
+        <th>Country</th>
+        <th>Total Cases Reported</th>
+      </tr>
+      <tr th:each="locstats : ${locstat}">
+        <td th:text="${locstats.state}"></td>
+        <td th:text="${locstats.country}"></td>
+        <td th:text="${locstats.inStock}? #{true} : #{false}">yes</td>
+      </tr>
+    </table>
+  
+  </body>
+
+</html>
+

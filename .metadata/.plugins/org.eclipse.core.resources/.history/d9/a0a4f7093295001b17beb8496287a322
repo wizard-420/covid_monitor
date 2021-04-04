@@ -1,0 +1,5 @@
+package io.javabrains.models;
+
+public class LocationStats {
+
+}

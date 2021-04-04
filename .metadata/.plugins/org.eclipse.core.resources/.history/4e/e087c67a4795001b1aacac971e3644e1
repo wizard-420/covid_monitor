@@ -1,0 +1,22 @@
+package io.javabrains.home;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import io.javabrains.CoronaVirusDataService;
+
+@Controller
+public class Mycontroller {
+	
+	@Autowired
+	CoronaVirusDataService coronaVirusDataService;
+	
+	@GetMapping("/cases")
+	public String home(Model model){
+		model.addAttribute("locstat", coronaVirusDataService.getAllStats());
+		return "home";
+	}
+
+}
